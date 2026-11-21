@@ -42,6 +42,10 @@ Para operar el robot de forma manual es necesario prenderlo primero (verificar q
 6. El robot realiza el movimiento solicitado.
 7. El sistema devuelve información de posición y estado cuando el protocolo lo permite, dando señal de movimiento constante mediante el Teach Pendant.
 
+###Robo DK
+
+RoboDK es un entorno multi-marca de simulación y programación fuera de línea que permite montar la celda robótica en 3D, comprobar que no existan colisiones ni singularidades, diseñar trayectorias complejas (como la trayectoria polar del laboratorio mediante su interfaz o código en Python), generar programas en lenguaje nativo INFORM (.JBI) y controlar el robot en vivo desde el computador. La comunicación entre el PC y el controlador del Motoman MH6 se realiza a través de una red local Ethernet (TCP/IP) con cable de red y direcciones IP dentro de la misma subred, empleando el protocolo High-Speed Ethernet (HSE) de Yaskawa y el driver específico de Motoman (apiv2) mientras el controlador está en modo REMOTE. Cuando se ejecuta la rutina en línea ("Run on Robot"), RoboDK toma cada coordenada cartesiana de la trayectoria, calcula mediante cinemática inversa los ángulos que deben adoptar los seis ejes del brazo, divide el recorrido en puntos intermedios (waypoints) y los envía secuencialmente por red al controlador. A medida que los motores avanzan, el controlador devuelve la lectura real de los encoders al computador para sincronizar el modelo 3D en pantalla con el movimiento físico hasta completar toda la trayectoria
+
 ### Comparacion RoboDK y Robotstudio
 
 RobotStudio es en primer lugar un software para productos ABB, eso lo deja mas por debajo en términos de versatilidad, pero a cambio gana profundidad en los robots que utiliza, así como precisión vía los códigos en RAPID, en particular la modalidad de pasar código desde la simulación a RAPID y viceversa es maravilloso a la hora de iterar procesos, tambien es mas complicado de utilizar y pide proyectos en carpetas para funcionar correctamente.

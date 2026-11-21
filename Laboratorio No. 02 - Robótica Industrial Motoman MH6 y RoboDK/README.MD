@@ -33,14 +33,9 @@ Los movimientos manuales del Robot son realizados via su teach pendant (aclaraci
 
 Para operar el robot de forma manual es necesario prenderlo primero (verificar que los reles pertinentes esten prendidos, que el controlador este alimentado, colocar los diales donde deben estar, etc), luego se verifica que la llave este en el modo TEACH, seleccionar el modo de movimiento por articulaciones en la pantalla, y finalmente mover la articulación que se desee usando los botones del teach pendant. Para cambiar al espacio de trabajo se vuelve a la pantalla y se elige ese modo y el sistema de coordenadas que se va a utilizar (de flanche, TPC o de base) y otra vez se pasa a los botones para mover el robot
 
-### Comunicación RoboDK-Motoman
-1. El computador ejecuta RoboDK.
-2. El computador establece conexión con el controlador del robot, comprobado via pingeo.
-3. El controlador recibe las instrucciones de movimiento.
-4. El controlador verifica las condiciones necesarias para ejecutar las órdenes.
-5. Los servomotores accionan las articulaciones.
-6. El robot realiza el movimiento solicitado.
-7. El sistema devuelve información de posición y estado cuando el protocolo lo permite, dando señal de movimiento constante mediante el Teach Pendant.
+### RoboDK
+
+RoboDK es un entorno multi-marca de simulación y programación fuera de línea que permite montar la celda robótica en 3D, comprobar que no existan colisiones ni singularidades, diseñar trayectorias complejas (como la trayectoria polar del laboratorio mediante su interfaz o código en Python), generar programas en lenguaje nativo INFORM (.JBI) y controlar el robot en vivo desde el computador. La comunicación entre el PC y el controlador del Motoman MH6 se realiza a través de una red local Ethernet (TCP/IP) con cable de red y direcciones IP dentro de la misma subred, empleando el protocolo High-Speed Ethernet (HSE) de Yaskawa y el driver específico de Motoman (apiv2) mientras el controlador está en modo REMOTE. Cuando se ejecuta la rutina en línea ("Run on Robot"), RoboDK toma cada coordenada cartesiana de la trayectoria, calcula mediante cinemática inversa los ángulos que deben adoptar los seis ejes del brazo, divide el recorrido en puntos intermedios (waypoints) y los envía secuencialmente por red al controlador. A medida que los motores avanzan, el controlador devuelve la lectura real de los encoders al computador para sincronizar el modelo 3D en pantalla con el movimiento físico hasta completar toda la trayectoria.
 
 ### Comparacion RoboDK y Robotstudio
 

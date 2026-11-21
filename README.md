@@ -89,9 +89,9 @@ Aquí se documentan los laboratorios, avances, resultados y la presentación de 
   <img src="./assets/integrantes/integrante3.jpg" alt="Foto integrante 3" style="border-radius: 50%; width: 180px;"><br>
 </div>
 
-- **Nombre completo:** Nombre Apellido
+- **Nombre completo:** Nirvana Gherenny Ceron Minota
 - **Carrera:** Ingeniería Mecatrónica
-- **Correo institucional:** nombre@unal.edu.co
+- **Correo institucional:** nceronm@unal.edu.co
 - **Usuario de GitHub:** [usuariogithub](https://github.com/usuariogithub)
 - **Rol en el equipo:** Ej. Documentación, pruebas, simulación
 - **Intereses:** Robótica industrial, sistemas autónomos, IA
